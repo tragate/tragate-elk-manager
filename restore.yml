@@ -1,0 +1,32 @@
+actions:
+  1:
+    action: restore
+    description: "Restore all 1 day ago and status success"
+    filters:
+      -
+        direction: older
+        filtertype: age
+        source: creation_date
+        unit: days
+        unit_count: 0
+      -
+        filtertype: state
+        state: SUCCESS
+      -
+        filtertype: pattern
+        kind: prefix
+        value: curator-
+    options:
+      disable_action: true
+      extra_settings: ~
+      ignore_unavailable: false
+      include_aliases: false
+      include_global_state: false
+      indices: ~
+      name: ~
+      partial: false
+      rename_pattern: ~
+      rename_replacement: ~
+      repository: tragate-logs
+      skip_repo_fs_check: true
+      wait_for_completion: true

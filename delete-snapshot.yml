@@ -1,0 +1,19 @@
+actions:
+  1:
+    action: delete_snapshots
+    description: "Delete snapshots from the selected repository older than 1 day (based on creation_date), for 'curator-' prefixed snapshots."
+    filters:
+      -
+        exclude: ~
+        filtertype: pattern
+        kind: prefix
+        value: curator-
+      -
+        direction: older
+        filtertype: age
+        source: creation_date
+        unit: days
+        unit_count: 1
+    options:
+      disable_action: True
+      repository: tr-logs

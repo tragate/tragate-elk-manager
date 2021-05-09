@@ -1,0 +1,1 @@
+/usr/local/bin/curator  --config $HOME/elk-manager/config.yml $HOME/elk-manager/product-snapshot.yml > /var/log/logstash/product-snapshot.log

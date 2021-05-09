@@ -1,0 +1,24 @@
+actions:
+  1:
+    action: snapshot
+    description: >-
+      Snapshot indices current day
+    filters:
+    - filtertype: pattern
+      kind: prefix
+      value: tr-web-
+    - filtertype: age
+      source: name
+      direction: older
+      timestring: '%Y%m%d%H%S'
+      unit: days
+      unit_count: 0
+    options:
+      disable_action: False
+      ignore_unavailable: false
+      include_global_state: true
+      name: product-%Y.%m.%d
+      partial: false
+      repository: tr-logs
+      skip_repo_fs_check: false
+      wait_for_completion: true

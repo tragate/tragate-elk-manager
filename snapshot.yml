@@ -1,0 +1,24 @@
+actions:
+  1:
+    action: snapshot
+    description: >-
+      Snapshot indices older than 1 day
+    filters:
+    - filtertype: pattern
+      kind: prefix
+      value: logstash-
+    - filtertype: age
+      source: name
+      direction: older
+      timestring: '%Y.%m.%d'
+      unit: days
+      unit_count: 1
+    options:
+      disable_action: False
+      ignore_unavailable: false
+      include_global_state: true
+      name: curator-%Y.%m.%d
+      partial: false
+      repository: tr-logs
+      skip_repo_fs_check: false
+      wait_for_completion: true

@@ -1,0 +1,1 @@
+/usr/local/bin/curator  --config $HOME/elk-manager/config.yml $HOME/elk-manager/delete.yml > /var/log/logstash/delete_indices.log
